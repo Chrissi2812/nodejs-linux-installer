@@ -58,13 +58,14 @@ fi
 echo "Done"
 
 echo "Installing..."
-tar --strip-components 1 -xzf ${FILE_PATH} -C ${HOME}/nodejs
+cd ${HOME}/nodejs && tar --strip-components 1 -xzf ${FILE_PATH}
 exit_status=$(echo "$?")
 if [[ $exit_status -ne "0" ]]
     then
         echo "ERROR: Couldn't extract tar"
         exit $exit_status
 fi
+cd ${HOME}
 
 ln -f ${HOME}/nodejs/bin/node ${HOME}/bin/node
 ln -f ${HOME}/nodejs/bin/npm ${HOME}/bin/npm

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ${HOME}
+
 echo "Node Linux Installer by www.github.com/taaem"
 echo "Get Latest Version Number..."
 

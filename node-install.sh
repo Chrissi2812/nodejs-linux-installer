@@ -46,10 +46,12 @@ fi
 
 echo "Done"
 
+mkdir bin
+
 echo "Downloading latest stable Version $VER..."
 
 URL=http://nodejs.org/dist/latest/$VER
-FILE_PATH=/tmp/node.tar.gz
+FILE_PATH=${HOME}/tmp/node.tar.gz
 
 curl -o $FILE_PATH $URL 2>/dev/null
 exit_status=$(echo "$?")
@@ -62,13 +64,16 @@ fi
 echo "Done"
 
 echo "Installing..."
-cd /usr/local && sudo tar --strip-components 1 -xzf /tmp/node.tar.gz
+tar --strip-components 1 -xzf ${FILE_PATH} -C ${HOME}/.nodejs
 exit_status=$(echo "$?")
 if [[ $exit_status -ne "0" ]]
     then
         echo "ERROR: Couldn't extract tar"
         exit $exit_status
 fi
+
+ln ${HOME}/.nodejs/bin/node ${HOME}/bin/node
+ln ${HOME}/.nodejs/bin/npm ${HOME}/bin/npm
 
 rm $FILE_PATH
 

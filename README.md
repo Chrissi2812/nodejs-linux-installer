@@ -4,7 +4,7 @@ I don't take any responsibilities if you blow your system up!
 
 ### Installing
 ```
-curl https://raw.githubusercontent.com/taaem/nodejs-linux-installer/master/node-install.sh 2>/dev/null | sh
+curl https://raw.githubusercontent.com/Chrissi2812/nodejs-linux-installer/master/node-install.sh 2>/dev/null | sh
 ```
 ### Contributing
 Just create a fork and please contribute all your improvements back here!

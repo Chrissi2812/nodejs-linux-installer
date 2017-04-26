@@ -40,7 +40,7 @@ fi
 echo "Done"
 
 [ -d bin ] || mkdir bin
-[ -d .nodejs ] || mkdir nodejs
+[ -d nodejs ] || mkdir nodejs
 
 echo "Downloading latest stable Version $VER..."
 

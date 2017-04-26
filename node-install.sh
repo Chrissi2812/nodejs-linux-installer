@@ -1,13 +1,6 @@
 #!/bin/bash
 
 echo "Node Linux Installer by www.github.com/taaem"
-if [[ $EUID -ne 0 ]]; then
-    echo "Need Root for installing NodeJS"
-    sudo sh -c 'echo "Got Root!"' 
-else
-    echo "Running as Root User"
-fi
-
 echo "Get Latest Version Number..."
 
 node_latest=$(curl http://nodejs.org/dist/latest/ 2>/dev/null)
@@ -47,6 +40,7 @@ fi
 echo "Done"
 
 mkdir bin
+mkdir .nodejs
 
 echo "Downloading latest stable Version $VER..."
 

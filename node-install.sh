@@ -40,7 +40,7 @@ fi
 echo "Done"
 
 [ -d bin ] || mkdir bin
-[ -d .nodejs ] || mkdir .nodejs
+[ -d .nodejs ] || mkdir nodejs
 
 echo "Downloading latest stable Version $VER..."
 
@@ -66,8 +66,8 @@ if [[ $exit_status -ne "0" ]]
         exit $exit_status
 fi
 
-ln ${HOME}/.nodejs/bin/node ${HOME}/bin/node
-ln ${HOME}/.nodejs/bin/npm ${HOME}/bin/npm
+ln -f ${HOME}/nodejs/bin/node ${HOME}/bin/node
+ln -f ${HOME}/nodejs/bin/npm ${HOME}/bin/npm
 
 rm $FILE_PATH
 

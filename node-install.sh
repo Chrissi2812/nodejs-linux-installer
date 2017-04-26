@@ -58,7 +58,7 @@ fi
 echo "Done"
 
 echo "Installing..."
-tar --strip-components 1 -xzf ${FILE_PATH} -C ${HOME}/.nodejs
+tar --strip-components 1 -xzf ${FILE_PATH} -C ${HOME}/nodejs
 exit_status=$(echo "$?")
 if [[ $exit_status -ne "0" ]]
     then

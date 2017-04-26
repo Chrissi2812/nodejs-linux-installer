@@ -67,8 +67,8 @@ if [[ $exit_status -ne "0" ]]
 fi
 cd ${HOME}
 
-ln -f ${HOME}/nodejs/bin/node ${HOME}/bin/node
-ln -f ${HOME}/nodejs/bin/npm ${HOME}/bin/npm
+ln -sf ${HOME}/nodejs/bin/node ${HOME}/bin/node
+ln -sf ${HOME}/nodejs/bin/npm ${HOME}/bin/npm
 
 rm $FILE_PATH
 
